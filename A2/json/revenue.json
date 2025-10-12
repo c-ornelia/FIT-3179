@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Annual Revenue Line Chart",
+  "width": 480,
+  "height": 270,
+  "title": {
+    "text": "Annual Revenue of Pokémon GO (Million USD)",
+    "fontSize": 20,
+    "fontWeight": "bold",
+    "anchor": "start",
+    "offset": 20
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {
+      "gridColor": "#ededed",
+      "gridWidth": 1,
+      "labelFontSize": 12,
+      "titleFontSize": 14,
+      "titleFontWeight": "normal"
+    }
+  },
+  "data": {
+    "values": [
+      {"Year": 2016, "Revenue": 550.45},
+      {"Year": 2017, "Revenue": 444.73},
+      {"Year": 2018, "Revenue": 607.6},
+      {"Year": 2019, "Revenue": 653.45},
+      {"Year": 2020, "Revenue": 908.93},
+      {"Year": 2021, "Revenue": 902.34},
+      {"Year": 2022, "Revenue": 648.28},
+      {"Year": 2023, "Revenue": 590.91},
+      {"Year": 2024, "Revenue": 557.36}
+    ]
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line", 
+        "color": "#ff928b",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "axis": {"labelAngle": 0, "title": null}
+        },
+        "y": {
+          "field": "Revenue",
+          "type": "quantitative",
+          "axis": {"labelPadding": 10, "titlePadding": 10}
+        },
+        "tooltip": [
+          {"field": "Year", "type": "ordinal", "title": "Year: "},
+          {"field": "Revenue", "type": "quantitative", "title": "Revenue (Million USD): "}
+        ]
+      }
+    }
+  ]
+}

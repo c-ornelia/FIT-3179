@@ -1,0 +1,73 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Pokémon GO Yearly Downloads vs Active Users",
+  "width": 490,
+  "height": 250,
+    "title": {
+    "text": "Pokémon GO Yearly Downloads vs Active Users",
+    "fontSize": 20,
+    "fontWeight": "bold",
+    "anchor": "start",
+    "offset": 20
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {
+      "gridColor": "#ededed",
+      "gridWidth": 1,
+      "labelFontSize": 12,
+      "titleFontSize": 14,
+      "titleFontWeight": "normal"
+    }
+  },
+  "data": {
+    "values": [
+      {"year": 2016, "users": 232, "downloads": 260},
+      {"year": 2017, "users": 65,  "downloads": 75},
+      {"year": 2018, "users": 131, "downloads": 59},
+      {"year": 2019, "users": 113, "downloads": 58},
+      {"year": 2020, "users": 86,  "downloads": 62},
+      {"year": 2021, "users": 71,  "downloads": 58},
+      {"year": 2022, "users": 62,  "downloads": 42},
+      {"year": 2023, "users": 55,  "downloads": 40}
+    ]
+  },
+  "layer": [
+    {
+      "mark": {"type": "bar", "color": "#d0d1ff", "stroke": null},
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": "",
+          "axis": {"labelAngle": 0, "ticks": false, "labelPadding": 10}
+        },
+        "y": {
+          "field": "downloads",
+          "type": "quantitative",
+          "title": "Downloads & Users (M)",
+          "axis": {"labelPadding": 10, "titlePadding": 10}
+        },
+        "tooltip": [
+          {"field": "year", "type": "ordinal", "title": "Year: "},
+          {"field": "downloads", "type": "quantitative", "title": "Downloads (Millions): "}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "line", "color": "#ff928b", "strokeWidth": 2},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {
+          "field": "users",
+          "type": "quantitative",
+          "title": ""
+        },
+        "tooltip": [
+          {"field": "year", "type": "ordinal", "title": "Year: "},
+          {"field": "users", "type": "quantitative", "title": "Active Users (Millions): "}
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Most Desired Items in Pokémon GO.",
+  "width": 180,
+  "height": 240,
+  "title": {
+    "text": "Most Desired Items in Pokémon GO",
+    "fontSize": 20,
+    "fontWeight": "bold",
+    "anchor": "start",
+    "offset": 20
+  },
+  "config": {
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 14,
+      "titleFontWeight": "normal"
+    }
+  },
+  "data": {
+    "values": [
+      {"item": "Stardust", "percentage": 53},
+      {"item": "TMs", "percentage": 13},
+      {"item": "Rare Candy", "percentage": 12},
+      {"item": "Golden Razz", "percentage": 3},
+      {"item": "XP", "percentage": 10},
+      {"item": "Potions", "percentage": 7},
+      {"item": "Pokeball", "percentage": 2}
+    ]
+  },
+  "layer": [
+    {
+      "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
+    },
+    {
+      "mark": {"type": "text", "radiusOffset": 10, "fontSize": 10, "fill": "#000000"},
+      "encoding": {
+        "text": {"field": "percentage", "type": "quantitative"}
+      }
+    }
+  ],
+  "encoding": {
+    "theta": {"field": "percentage", "type": "quantitative", "stack": true},
+    "radius": {"field": "percentage", "scale": {"type": "sqrt", "zero": true, "rangeMin": 70, "rangeMax": 140}},
+    "color": {
+      "field": "item",
+      "type": "nominal",
+      "scale": {
+        "range": ["#ffadad", "#ffd6a5", "#bdb2ff", "#fcefb4", "#fad2e1", "#eddcd2", "#b4e1ff"]
+      },
+      "legend": {"title": "Item"}
+    },
+    "order": {"field": "percentage", "type": "quantitative", "sort": "ascending"},
+    "tooltip": [
+      {"field": "item", "type": "nominal", "title": "Item:"},
+      {"field": "percentage", "type": "quantitative", "title": "Percentage (%):", "format": "d"}
+    ]
+  }
+}

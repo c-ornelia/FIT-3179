@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pokémon Parallel Coordinates</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <h3>Parallel Coordinates - Pokémon Moves</h3>
+  <div id="vis"></div>
+
+  <script>
+    const spec = {
+      "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+      "description": "Parallel coordinates for Pokémon moves with per-axis real scales",
+      "width": 700,
+      "height": 350,
+
+      "data": {
+        "url": "fastattack.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "PWR": "number",
+            "ENG": "number",
+            "Duration": "number",
+            "EPS": "number",
+            "DPS": "number"
+          }
+        }
+      },
+
+      "transform": [
+        {"window": [{"op": "count", "as": "index"}]},
+        {"fold": ["PWR","ENG","Duration","EPS","DPS"]},
+        {
+          "joinaggregate": [
+            {"op": "min", "field": "value", "as": "min"},
+            {"op": "max", "field": "value", "as": "max"}
+          ],
+          "groupby": ["key"]
+        },
+        {"calculate": "(datum.value - datum.min)/(datum.max - datum.min)", "as": "norm_val"},
+        {"calculate": "(datum.min + datum.max)/2", "as": "mid"}
+      ],
+
+      "layer": [
+        // vertical rules
+        {
+          "mark": {"type":"rule","color":"#ddd"},
+          "encoding": {"x":{"field":"key"},"detail":{"aggregate":"count"}}
+        },
+        // parallel lines
+        {
+          "mark": {"type":"line","opacity":0.6},
+          "encoding": {
+            "x":{"field":"key","type":"nominal"},
+            "y":{"field":"norm_val","type":"quantitative","axis":null},
+            "detail":{"field":"index"},
+            "color":{"field":"Type","type":"nominal"},
+            "tooltip":[
+              {"field":"Move Name","type":"nominal"},
+              {"field":"Type","type":"nominal"},
+              {"field":"PWR","type":"quantitative"},
+              {"field":"ENG","type":"quantitative"},
+              {"field":"Duration","type":"quantitative"},
+              {"field":"EPS","type":"quantitative"},
+              {"field":"DPS","type":"quantitative"}
+            ]
+          }
+        },
+        // max label
+        {
+          "encoding":{"x":{"field":"key"},"y":{"value":0}},
+          "layer":[
+            {"mark":{"type":"text","style":"label"},"encoding":{"text":{"aggregate":"max","field":"max"}}},
+            {"mark":{"type":"tick","style":"tick","size":8,"color":"#ccc"}}
+          ]
+        },
+        // mid label
+        {
+          "encoding":{"x":{"field":"key"},"y":{"value":175}},
+          "layer":[
+            {"mark":{"type":"text","style":"label"},"encoding":{"text":{"aggregate":"max","field":"mid"}}},
+            {"mark":{"type":"tick","style":"tick","size":8,"color":"#ccc"}}
+          ]
+        },
+        // min label
+        {
+          "encoding":{"x":{"field":"key"},"y":{"value":350}},
+          "layer":[
+            {"mark":{"type":"text","style":"label"},"encoding":{"text":{"aggregate":"min","field":"min"}}},
+            {"mark":{"type":"tick","style":"tick","size":8,"color":"#ccc"}}
+          ]
+        }
+      ],
+
+      "config": {
+        "axisX": {"domain":false,"labelAngle":0,"title":null,"tickColor":"#ccc"},
+        "view":{"stroke":null},
+        "style":{
+          "label":{"baseline":"middle","align":"right","dx":-5},
+          "tick":{"orient":"horizontal"}
+        }
+      }
+    };
+
+    vegaEmbed("#vis", spec).catch(console.error);
+  </script>
+</body>
+</html>

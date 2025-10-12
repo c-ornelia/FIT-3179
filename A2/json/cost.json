@@ -1,0 +1,73 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Development Costs with Ranges",
+  "width": 380,
+  "height": 220,
+  "title": {
+    "text": ["Approximate Breakdown of Development Costs (USD)", "for Pokémon GO"],
+    "fontSize": 20,
+    "fontWeight": "bold",
+    "anchor": "start",
+    "offset": 20
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {
+      "gridColor": "#ededed",
+      "gridWidth": 1,
+      "labelFontSize": 12,
+      "titleFontSize": 14,
+      "titleFontWeight": "normal"
+    }
+  },
+  "data": {
+    "values": [
+      {"Component": "Client App & Game Design", "value": 80000, "min": 60000, "max": 100000},
+      {"Component": "UI/UX Design", "value": 6500, "min": 6500, "max": 6500},
+      {"Component": "Backend Development", "value": 80000, "min": 80000, "max": 80000},
+      {"Component": "Server Infrastructure", "value": 150000, "min": 150000, "max": 150000},
+      {"Component": "Game Models & Animations", "value": 100000, "min": 100000, "max": 100000},
+      {"Component": "Sound Effects", "value": 17500, "min": 15000, "max": 20000},
+      {"Component": "QA & Testing", "value": 50000, "min": 50000, "max": 50000},
+      {"Component": "Management Costs", "value": 20000, "min": 20000, "max": 20000}
+    ]
+  },
+  "layer": [
+    {
+      "mark": {"type": "bar", "size": 20, "color": "#d0d1ff"},
+      "encoding": {
+        "y": {
+          "field": "Component",
+          "type": "ordinal",
+          "axis": {"title": "", "labelPadding": 10}
+        },
+        "x": {
+          "field": "value",
+          "type": "quantitative",
+          "scale": {"domainMin": 0},
+          "axis": {"titlePadding": 10, "domain": false, "ticks": false, "labelPadding": 10}
+        },
+        "tooltip": [
+          {"field": "Component", "type": "nominal", "title": "Component: "},
+          {"field": "value", "type": "quantitative", "title": "Estimated Cost (USD): "}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "errorbar", "ticks": true, "color": "black"},
+      "transform": [
+        {"filter": "datum.min !== datum.max"}
+      ],
+      "encoding": {
+        "y": {"field": "Component", "type": "ordinal"},
+        "x": {"field": "min", "type": "quantitative", "title": "Estimated Cost (USD)"},
+        "x2": {"field": "max"},
+        "tooltip": [
+          {"field": "Component", "type": "nominal", "title": "Component: "},
+          {"field": "min", "type": "quantitative", "title": "Min Cost (USD): "},
+          {"field": "max", "type": "quantitative", "title": "Max Cost (USD): "}
+        ]
+      }
+    }
+  ]
+}

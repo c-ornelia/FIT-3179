@@ -1,0 +1,155 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Pokémon defender lollipop chart by score",
+  "width": 740,
+  "height": 289,
+  "title": {
+    "text": "Top 10 Defenders by Tier",
+    "fontSize": 20,
+    "fontWeight": "bold",
+    "anchor": "start",
+    "offset": 20
+  },
+  "config": {
+    "view": {"stroke": "transparent"},
+    "axis": {
+      "gridColor": "#ededed",
+      "gridWidth": 1,
+      "labelFontSize": 12,
+      "titleFontSize": 14,
+      "titleFontWeight": "normal"
+    }
+  },
+  "padding": {
+    "left": 100,
+    "right": 50
+    },
+  "autosize": {
+    "type": "fit-x",
+    "contains": "padding"
+  },
+  "data": {
+    "url": "csv/defenders.csv"
+  },
+  "params": [
+    {
+      "name": "tierSelect",
+      "value": "S",
+      "bind": {
+        "input": "select",
+        "options": ["S", "A+", "A", "B", "C", "D"],
+        "labels": ["S", "A+", "A", "B", "C", "D"],
+        "name": "Select Tier: ",
+        "element": "#vis .vega-bind"
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.Tier == tierSelect"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "size": 2,
+        "color": "#b6ccfe"
+      },
+      "encoding": {
+        "x": {
+          "field": "Score",
+          "type": "quantitative",
+          "title": "Defender Score",
+          "scale": {
+            "domain": [0, 80000]
+          },
+          "axis": {
+            "titlePadding": 15,
+            "domain": false,
+            "ticks": false,
+            "values": [10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000],
+            "gridColor": "#ededed",
+            "gridWidth": 1,
+            "format": "~s"
+          }
+        },
+        "y": {
+          "field": "Name",
+          "type": "ordinal",
+          "sort": "-x",
+          "axis": {
+            "title": null
+          }
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "opacity": 1,
+        "size": 100,
+        "color": "#abc4ff"
+      },
+      "encoding": {
+        "x": {
+          "field": "Score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Name",
+          "type": "ordinal",
+          "sort": "-x"
+        },
+        "tooltip": [
+          {
+            "field": "Name",
+            "title": "Pokémon: "
+          },
+          {
+            "field": "Tier",
+            "title": "Tier: "
+          },
+          {
+            "field": "Defense",
+            "title": "Defense: "
+          },
+          {
+            "field": "Stamina",
+            "title": "Stamina: "
+          },
+          {
+            "field": "Score",
+            "title": "Score: "
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 10,
+        "font": "PT Sans"
+      },
+      "encoding": {
+        "x": {
+          "field": "Score",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "Name",
+          "type": "ordinal",
+          "sort": "-x"
+        },
+        "text": {
+          "field": "Score"
+        },
+        "color": {
+          "value": "black"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Preferred Activity in Pokémon GO.",
+  "width": 180,
+  "height": 240,
+  "title": {
+    "text": "Preferred Activity in Pokémon GO",
+    "fontSize": 20,
+    "fontWeight": "bold",
+    "anchor": "start",
+    "offset": 20
+  },
+  "config": {
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 14,
+      "titleFontWeight": "normal"
+    }
+  },
+  "data": {
+    "values": [
+      {"activity": "Catching Pokémon", "percentage": 69},
+      {"activity": "Hatching Eggs", "percentage": 6},
+      {"activity": "Battling Gyms", "percentage": 10},
+      {"activity": "Raiding", "percentage": 15}
+    ]
+  },
+  "layer": [
+    {
+      "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
+    },
+    {
+      "mark": {"type": "text", "radiusOffset": 10, "fontSize": 10, "fill": "#000000"},
+      "encoding": {
+        "text": {"field": "percentage", "type": "quantitative"}
+      }
+    }
+  ],
+  "encoding": {
+    "theta": {"field": "percentage", "type": "quantitative", "stack": true},
+    "radius": {"field": "percentage", "scale": {"type": "sqrt", "zero": true, "rangeMin": 30, "rangeMax": 100}},
+    "color": {
+      "field": "activity",
+      "type": "nominal",
+      "scale": {
+        "range": ["#ffadad", "#ffd6a5", "#bde0fe", "#e2afff"]
+      },
+      "legend": {"title": "Activity"}
+    },
+    "order": {"field": "percentage", "type": "quantitative", "sort": "ascending"},  
+    "tooltip": [
+      {"field": "activity", "type": "nominal", "title": "Activity:"},
+      {"field": "percentage", "type": "quantitative", "title": "Percentage (%): ", "format": "d"}
+    ]
+  }
+}

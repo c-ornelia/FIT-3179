@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Annual Revenue Chart</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+</head>
+<body>
+  <div id="vis"></div>
+
+  <script type="text/javascript">
+    // Vega-Lite spec
+    const spec = {
+      "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+      "description": "Annual Revenue Line Chart",
+      "width": window.innerWidth / 2,
+      "height": 300,
+      "title": {
+        "text": "Annual Revenue of Pokémon Go (Million USD)",
+        "font": "PT Sans",
+        "fontSize": 20,
+        "fontWeight": "bold",
+        "anchor": "middle",
+        "color": "#333"
+      },
+      "config": {
+        "view": {"stroke": "transparent"},
+        "axis": {
+          "labelFont": "PT Sans",
+          "titleFont": "PT Sans",
+          "labelFontSize": 12,
+          "titleFontSize": 14,
+          "titleFontWeight": "normal"  // axis titles not bold
+        }
+      },
+      "data": {
+        "values": [
+          {"Year": 2016, "Revenue": 550.45},
+          {"Year": 2017, "Revenue": 444.73},
+          {"Year": 2018, "Revenue": 607.6},
+          {"Year": 2019, "Revenue": 653.45},
+          {"Year": 2020, "Revenue": 908.93},
+          {"Year": 2021, "Revenue": 902.34},
+          {"Year": 2022, "Revenue": 648.28},
+          {"Year": 2023, "Revenue": 590.91},
+          {"Year": 2024, "Revenue": 557.36}
+        ]
+      },
+      "layer": [
+        {
+          "mark": {"type": "line", "color": "#b6ccfe"},
+          "encoding": {
+            "x": {
+              "field": "Year",
+              "type": "ordinal",
+              "title": "Year",
+              "axis": {"labelAngle": 0}
+            },
+            "y": {
+              "field": "Revenue",
+              "type": "quantitative",
+              "title": "Revenue (Million USD)",
+              "axis": {"gridColor": "#ededed", "gridWidth": 1},
+              "scale": {"domainMin": 0}
+            }
+          }
+        }
+      ]
+    };
+
+    // Load PT Sans font first, then embed chart
+    WebFont.load({
+      google: { families: ['PT Sans:400,700'] },
+      active: function() {
+        vegaEmbed('#vis', spec);
+      }
+    });
+  </script>
+</body>
+</html>
