@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "description": "Preferred Activity in Pokémon GO.",
+  "description": " Most Preferred Activity in Pokémon GO.",
   "width": 380,
   "height": 240,
   "background": "#edf2fb",
