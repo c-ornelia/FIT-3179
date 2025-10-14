@@ -89,3 +89,14 @@ h1 {
   padding: 4px 8px;
   border-radius: 6px;
 }
+
+.credits {
+  margin-top: 50px;
+  text-align: center; /* or left/right as you like */
+  font-size: 0.9em;
+  color: #555;
+}
+
+.credits p {
+  margin: 5px 0;
+}
