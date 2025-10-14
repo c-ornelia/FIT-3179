@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 680,
-  "height": 300,
-  "background": "#edf2fb",
+  "width": 1200,
+  "height": 400,
+  "background": "#f4f8ff",
   "title": {
     "text": "Relative Pokémon GO Interest, Malaysian States (2016 – 2024)",
     "fontSize": 20,
@@ -12,8 +12,8 @@
   },
   "projection": {
     "type": "mercator",
-    "center": [110, 4.2],
-    "scale": 1800
+    "center": [110.4, 4],
+    "scale": 3100
   },
   "params": [
     {
@@ -71,7 +71,10 @@
             "domain": ["< 20", "20 – 39", "40 – 59", "60 – 79", "≥ 80"],
             "range": ["#caf0f8", "#90e0ef", "#00b4d8", "#0077b6", "#03045e"]
           },
-          "legend": {"title": ["Relative", "Interest", "Score"], "titleFontWeight": "normal", "offset": -5}
+          "legend": {
+            "title": ["Relative", "Interest", "Score"], 
+            "titleFontWeight": "normal", 
+            "offset": -30}
         },
         "tooltip": [
           {"field": "Region", "title": "State: "},

@@ -3,7 +3,7 @@
   "description": "Development Costs with Ranges",
   "width": 380,
   "height": 230,
-  "background": "#edf2fb",
+  "background": "#f4f8ff",
   "title": {
     "text": ["Approximate Breakdown of Development Costs (USD)", "for Pokémon GO"],
     "fontSize": 20,
@@ -46,7 +46,7 @@
           "field": "value",
           "type": "quantitative",
           "scale": {"domainMin": 0},
-          "axis": {"titlePadding": 10, "domain": false, "ticks": false, "labelPadding": 10}
+          "axis": {"titlePadding": 10, "domain": false, "ticks": false, "labelPadding": 10, "labelAlign": "center"}
         },
         "tooltip": [
           {"field": "Component", "type": "nominal", "title": "Component: "},
@@ -68,6 +68,22 @@
           {"field": "min", "type": "quantitative", "title": "Min Cost (USD): ", "format": ","},
           {"field": "max", "type": "quantitative", "title": "Max Cost (USD): ", "format": ","}
         ]
+      }
+    },
+    {
+      "transform": [{
+        "filter": "datum.Component === 'Client App & Game Design'"
+      }],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "fontSize": 12,
+        "x": 250,
+        "y": 43,
+        "text": ["Spent around $60K–" , 
+                 "$1M on development."],
+        "color": "#333"
       }
     }
   ]

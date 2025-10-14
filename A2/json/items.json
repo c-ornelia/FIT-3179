@@ -3,7 +3,7 @@
   "description": "Most Desired Items in Pokémon GO.",
   "width": 380,
   "height": 240,
-  "background": "#edf2fb",
+  "background": "#f4f8ff",
   "title": {
     "text": "Most Desired Items in Pokémon GO",
     "fontSize": 20,
@@ -49,7 +49,7 @@
       "scale": {
         "range": ["#ffadad", "#ffd6a5", "#bdb2ff", "#fcefb4", "#fad2e1", "#eddcd2", "#b4e1ff"]
       },
-      "legend": {"title": "Item", "offset": 30}
+      "legend": {"title": "Item", "offset": -55}
     },
     "order": {"field": "percentage", "type": "quantitative", "sort": "ascending"},
     "tooltip": [

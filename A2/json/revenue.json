@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Annual Revenue Line Chart",
-  "width": 480,
+  "width": 498,
   "height": 270,
-  "background": "#edf2fb",
+  "background": "#f4f8ff",
   "title": {
     "text": "Annual Revenue of Pokémon GO (Million USD)",
     "fontSize": 20,
@@ -53,6 +53,23 @@
       }
     },
     {
+      "transform": [
+        {
+          "filter": "datum.Year == 2017"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 180,
+        "color": "#ff928b"
+      },
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal"},
+        "y": {"field": "Revenue", "type": "quantitative"}
+      }
+    },
+    {
       "mark": {
         "type": "line", 
         "color": "#ff928b",
@@ -76,17 +93,37 @@
       }
     },
     {
+      "transform": [{
+        "filter": "datum.Year === 2020"
+      }],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "bottom",   
+        "fontWeight": 100,
+        "fontSize": 12,
+        "x": 220,
+        "y": 20,
+        "text": ["Added 'play-from-home' features" , 
+                 "for lockdown accessibility"],
+                   
+        "color": "#333"
+      }
+    },
+    {
+      "transform": [{
+        "filter": "datum.Year === 2017"
+      }],
       "mark": {
         "type": "text",
         "align": "left",
         "baseline": "bottom",   
         "fontWeight": 100,
-        "fontSize": 10,
-        "x": 150,
-        "y": 138,
-        "text": ["Pokémon GO’s revenue hit its peak in 2020 thanks to new 'play-at-home'" , 
-                 "features like Remote Raid Passes and a virtual Pokémon GO Fest,",
-                 "which became especially popular during pandemic lockdowns."],
+        "fontSize": 12,
+        "x": 70,
+        "y": 180,
+        "text": ["Fading initial hype and a lack of" , 
+                 "new content caused revenue to fall"],
                    
         "color": "#333"
       }

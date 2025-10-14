@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 700,
+  "width": 715,
   "height": 450,
-  "background": "#edf2fb",
+  "background": "#f4f8ff",
   "title": {
-    "text": "Base Stats by Primary Pokémon Type",
+    "text": "Distribution of All Pokémon Base Stats by Type",
     "fontSize": 20,
     "fontWeight": "bold",
     "anchor": "start",
@@ -76,13 +76,14 @@
       "type": "nominal",
       "legend": {
         "title": ["Pokémon Type", "↓ Click to Filter"], 
-        "symbolStrokeColor": "#8671fc", 
+        "symbolStrokeColor": "#472fce", 
         "symbolStrokeWidth": 1.5, 
-        "symbolSize": 100},
-      "scale": {"range": ["#bec0f1"]}, 
+        "symbolSize": 100,
+        "offset": 24},
+      "scale": {"range": ["#8671fc"]}, 
       "condition": {
         "param": "TypeHighlight",
-        "value": "#adaff7"
+        "value": "#8671fc"
       }
     },
     "opacity": {

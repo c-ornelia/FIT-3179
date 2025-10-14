@@ -28,140 +28,143 @@
     
     <!-- TITLE -->
     <div class="pure-g">
-      <div class="pure-u-1-4">
+      <div class="pure-u-5-24" style="margin-left: 47px;">
       </div>
       <div class="pure-u-4-8">
         <img src="pics/title.png" alt="Pokémon GO Logo" height=200>
       </div>
       <div class="pure-u-1-12">
       </div>
-      <div class="pure-u-1-8">
-        <img src="pics/reshiram.gif" alt="Pokémon GO Logo" height=200>
+      <div class="pure-u-2-8">
+        <img src="pics/reshiram.gif" alt="Pokémon GO Logo" height=150 style="margin-top: 30px; margin-bottom: 30px;">
+      </div>
+      <div class="pure-u-5-24" style="margin-left: 47px;">
       </div>
       
-  <!hr style="border: 0; height: 2px; background-color: #86ade1; width: 100%; margin-top: 40px; margin-bottom: 0px">
+  <!hr style="border: 0; height: 2px; background-color: #86ade1; width: 100%; margin-bottom: 0px">
 
     <!-- SECTION 1 -->
     <div class="pure-g">
-      <div class="pure-u-1-2">
-        <div class="description description-left">
+      <div class="pure-u-5-12">
+        <div class="description description-overview">
           <h2>Overview</h2>
           <p>
-            Pokémon Go is an augmented reality (AR) mobile game released 
-            in 2016 where players catch and battle Pokémon in real-world 
-            locations. The game saw huge popularity at launch, with millions 
-            trying it out, but Pokémon Go lost about <b>70 percent</b> of its 
-            player base. Over time, its player base became mainly composed of 
-            loyal fans who continue playing regularly, while new downloads slowed. 
-            This shift marks its transition from a viral trend to a game sustained 
-            by a smaller, dedicated community.
+            <b>Pokémon GO</b>, released in <b>2016</b>, is an augmented reality (AR)
+            mobile game where players catch and battle Pokémon in real-world 
+            locations. It became a global phenomenon at launch but soon <b>lost 
+            about 70%</b> of its players. Over time, it evolved from a viral trend 
+            into a stable game supported by a smaller, loyal fan base.
           </p>
         </div>
       </div>
-      <div class="pure-u-1-2">
-        <div id="users" class="vis-container"></div>
+      <div class="pure-u-7-12">
+        <div id="users" class="vis-container-right"></div>
       </div>
     </div>
 
     <!-- SECTION 2 -->
     <div class="pure-g">
       <div class="pure-u-1-2">
-        <div id="cost" class="vis-container"></div>
+        <div id="cost" class="vis-container-left"></div>
       </div>
       <div class="pure-u-1-2">
-        <div id="revenue" class="vis-container"></div>
+        <div id="revenue" class="vis-container-right"></div>
       </div>
     </div>
 
     <!-- SECTION 3 -->
     <div class="pure-g">
-      <div class="pure-u-2-3">
-        <div id="map" class="vis-container"></div>
-      </div>
-      <div class="pure-u-1-3">
-        <div class="description description-left">
-          <h2>Regional Distribution</h2>
-          <p>
-            From 2016 to 2024, Pokémon Go remained <b>highly popular</b> in <b>Pulau Pinang</b>, 
-            maintaining an interest level of 100, likely due to its many PokéStops, Gyms, and 
-            active player community. In contrast, urban states like Selangor and Kuala Lumpur 
-            showed fluctuating interest, while Kelantan and Terengganu stayed consistently low, 
-            and Sabah and Sarawak experienced a slight decline over time.
-          </p>
-        </div>
+      <div class="pure-u-1-1">
+        <div id="map" class="vis-container-map"></div>
       </div>
     </div>
 
-    <!-- SECTION 4 -->
     <div class="pure-g">
-      <div class="pure-u-6-24">
-        <div class="description description-left" margin-bottom: 0px>
-          <h2>Analysis</h2>
-          <p>
-            <b>Deoxys</b> has the <b>highest Base Attack</b>, followed by Zacian 
-            and Xurkitree. <b>Shuckle</b>, on the other hand, stands out for its 
-            <b>exceptionally high Base Defense</b> while also having the <b>lowest 
-            Base Attack</b>. Lugia, Regice, and Registeel also rank among the top 
-            defenders. <b>Blissey</b> and <b>Chansey</b> <b>lead</b> in <b>Base 
-            Stamina</b> with their enormous HP, making them some of the toughest 
-            Pokémon to defeat in Gyms, whereas Shedinja sits at the opposite extreme 
-            with only 1 HP.
+      <div class="pure-u-1-2">
+        <div class="description description-left">
+          <p style="margin-bottom: 5px;">
+            From 2016 to 2024, Pokémon Go remained <b>highly popular</b> in <b>Pulau Pinang</b>, 
+            maintaining an interest level of 100, likely due to its many PokéStops, Gyms, and 
+            active player community.
           </p>
         </div>
+      </div>   
+      <div class="pure-u-1-2">
+        <div class="description description-right">
+        <p style="margin-bottom: 5px;">
+          In contrast, urban states like Selangor and Kuala Lumpur 
+          showed fluctuating interest, while Kelantan and Terengganu stayed consistently low, 
+          and Sabah and Sarawak experienced a slight decline over time.
+        </p>
       </div>
+    </div> 
+
+    <!-- SECTION 4 -->
+    <div class="pure-g">
       <div class="pure-u-18-24">
-        <div id="base_stats" class="vis-container" margin-bottom: 0px></div>
+        <div id="base_stats" class="vis-container-left"></div>
       </div>
+      <div class="pure-u-6-24">
+        <div class="description description-basestats">
+          <h2>Analysis</h2>
+          <p>
+            Deoxys has the highest Base Attack, while Shuckle leads in Defense but also has 
+            the lowest Attack. Blissey tops Stamina with its massive HP.
+          </p>
+        </div>
     </div>
 
     <!-- SECTION 5 -->
     <div class="pure-g">
-      <div class="pure-u-5-12">
-        <div id="attackers" class="vis-container"></div>
+      <div class="pure-u-1-2">
+        <div id="defenders" class="vis-container-left"></div>
       </div>
-      <div class="pure-u-7-12">
-        <div id="defenders" class="vis-container"></div>
+      <div class="pure-u-1-2">
+        <div id="attackers" class="vis-container-right"></div>
       </div>
-    </div> 
+    </div>
 
     <div class="pure-g">
-      <div class="pure-u-5-12">
-        <div class="description description-right">
+      <div class="pure-u-1-2">
+        <div class="description description-left">
           <p>
-           <b>S Tier</b> Pokémon, led by <b>Mega Rayquaza</b>, offers the <b>highest value</b> 
-          for Stardust and Candy investments, demonstrating exceptional performance in Raids. 
-          <b>A</b> and <b>B Tier</b> Pokémon remain <b>strong</b> and <b>dependable</b> choices, 
-          while <b>C</b> and <b>D Tiers</b> serve as <b>practical options</b> for <b>newer players
-          </b>. <b>F Tier</b> Pokémon are generally <b>less effective</b> in Raids but can still 
-          perform adequately in certain Trainer Battles.
+            Defender score is calculated by multiplying a Pokémon’s Stamina and Defense. 
+            Blissey rank in the S Tier as the toughest Gym defenders, while 
+            A+ Tier Pokémon offer strong bulk performance. A and B Tiers 
+            feature solid alternatives for most players, whereas C Tier Pokémon are less 
+            effective in Gyms and better suited for Raids or PvP battles.
           </p>
         </div>
-      </div>  
-      <div class="pure-u-1-12">
-      </div>  
-      <div class="pure-u-1-24">
-      </div> 
-      <div class="pure-u-5-12">
-        <div class="description description-right2">
+      </div>   
+      <div class="pure-u-1-2">
+        <div class="description description-right">
         <p>
-          The best Gym Defenders are Pokémon with high bulk, which is calculated by <b>multiplying</b> 
-          Pokémon <b>Stamina</b> and <b>Defense</b>. <b>Blissey</b> and <b>Chansey</b> rank in the 
-          <b>S Tier</b> as the toughest Gym defenders, while <b>A+ Tier</b> Pokémon offer 
-          <b>strong bulk</b> and <b>reliable performance</b>. <b>A</b> and <b>B Tiers</b> feature 
-          solid alternatives for most players, whereas <b>C Tier</b> Pokémon are <b>less effective</b> 
-          in Gyms and are better suited for Raids or PvP battles.
+          S Tier Pokémon, led by Mega Rayquaza, offer the highest value for Stardust 
+          and Candy investments (used to power up and evolve Pokémon), demonstrating 
+          exceptional performance in Raids. A and B Tier Pokémon remain strong and 
+          reliable choices, while lower tiers are better suited for newer players or 
+          specific battle situations.
         </p>
       </div>
     </div> 
 
     <!-- SECTION 6 -->
     <div class="pure-g">
-      <div class="pure-u-1-2">
-        <div id="activity" class="vis-container"></div>
+      <div class="pure-u-9-24">
+        <div id="activity" class="vis-container-left"></div>
       </div>
-      <div class="pure-u-1-2">
-        <div id="items" class="vis-container"></div>
+      <div class="pure-u-9-24">
+        <div id="items" class="vis-container-middle"></div>
       </div>
+      <div class="pure-u-6-24">
+        <div class="description description-preference">
+          <h2>Player Preferences</h2>
+          <p>
+            Catching Pokémon remains the primary activity, emphasizing the game’s 
+            core focus on collection, while Stardust is most desired, reflecting 
+            players’ priority on powering up.
+          </p>
+        </div>
     </div>
 
     <!-- Credits -->
@@ -170,7 +173,14 @@
         <p style="text-align: left; font-size: 0.9em; color: #555;">
           Visualisation Author: Cornelia Lee Wen Rong
             <br> 
-          Source: Pokémon GO Hub | Kaggle | Google Trends | Business of Apps | Statistica | Juego Studios
+          Source: 
+          <a href="https://db.pokemongohub.net/">Pokémon GO Hub</a> | 
+          <a href="https://www.kaggle.com/datasets/shreyasur965/pokemon-go?select=pokemon.csv">Kaggle</a> | 
+          <a href="https://trends.google.com/trends/explore?date=now%201-d&geo=MY&q=pokemon%20go&hl=en">Google Trends</a> | 
+          <a href="https://www.businessofapps.com/data/pokemon-go-statistics/">Business of Apps</a> | 
+          <a href="https://www.statista.com/statistics/882474/pokemon-go-all-time-player-spending/">Statistica</a> | 
+          <a href="https://www.juegostudio.com/blog/pokemon-go-revenue">Juego Studios</a> |
+          <a href="https://www.reddit.com/r/TheSilphRoad/comments/7e3mqi/analysis_a_brief_overview_of_the_pokemon_go/">Reddit</a>
         </p>
       </div>
     </div>

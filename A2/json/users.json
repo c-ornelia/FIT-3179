@@ -1,9 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "description": "Pokémon GO Yearly Downloads vs Active Users",
-  "width": 490,
-  "height": 250,
-  "background": "#edf2fb",
+  "width": 610,
+  "height": 270,
+  "background": "#f4f8ff",
   "config": {
     "view": {"stroke": "transparent"},
     "axis": {
@@ -115,7 +115,7 @@
         "fontWeight": "bold",
         "x": 247,
         "y": -20,
-        "text": "VS",
+        "text": "vs",
         "color": "#333"
       }
     },
@@ -126,23 +126,25 @@
         "baseline": "bottom",
         "fontSize": 20,
         "fontWeight": "bold",
-        "x": 280,
+        "x": 279,
         "y": -20,
         "text": "Active Users",
         "color": "#ff928b"
       }
     },
     {
+      "transform": [{
+        "filter": "datum.year === 2018"
+      }],
       "mark": {
         "type": "text",
         "align": "left",
         "baseline": "bottom",
-        "fontSize": 10,
+        "fontSize": 12,
         "x": 165,
-        "y": 95,
-        "text": ["Feature additions including trading, social features and" , 
-                 "Community Day events, reignited interest in Pokémon GO,",
-                 "bringing back lapsed players and driving user activity."],
+        "y": 105,
+        "text": ["Trading and Community Days reignited" , 
+                 "interest and boosted activity."],
         "color": "#333"
       }
     }
