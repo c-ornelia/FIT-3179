@@ -1,0 +1,91 @@
+body *{
+    font-family: 'PT Sans', sans-serif;
+}
+
+h1 {
+    font-weight: 900;
+}
+
+body {
+    background-color: #edf2fb;
+}
+
+.page {
+    width: 1200px;
+    background-color: #edf2fb;
+    margin: auto;
+    padding: 50px 50px 0px 50px;
+}
+
+.vis-container {
+    width: 100%;
+    margin: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+}
+
+.description h2,
+h1 {
+    margin-top: 0px;
+}
+
+.description-right {
+    padding-bottom: 20px;
+    padding-left: 20px;
+    text-align: justify;       
+    line-height: 1.8;         
+    margin: 0px 0px 0px 20px;         
+    font-size: 16px;        
+    background-color: #edf2fb;  
+}
+
+.description-right2 {
+    padding-bottom: 20px;
+    padding-left: 20px;
+    text-align: justify;       
+    line-height: 1.8;         
+    margin: 0px 0px 0px 20px;         
+    font-size: 16px;        
+    background-color: #edf2fb;  
+}
+
+.description-left {
+    padding-top: 30px;  
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    text-align: justify;       
+    line-height: 1.8;         
+    margin: 20px;         
+    font-size: 16px;        
+    background-color: #edf2fb;  
+}
+
+.pure-g {
+    margin-bottom: 0px;
+}
+
+.small-font {
+    font-size: 14px;
+}
+
+/* Center dropdown filters for all Vega-Lite charts */
+.vega-bindings {
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
+  margin-top: 10px;      /* Space below dropdown */
+}
+
+/* Optional: make label and dropdown look nice */
+.vega-bindings label {
+  font-weight: normal;
+  margin-right: 8px;
+}
+
+.vega-bindings select {
+  padding: 4px 8px;
+  border-radius: 6px;
+}

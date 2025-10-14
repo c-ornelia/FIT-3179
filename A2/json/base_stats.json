@@ -1,7 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 700,
-  "height": 400,
+  "height": 450,
+  "background": "#edf2fb",
   "title": {
     "text": "Base Stats by Primary Pokémon Type",
     "fontSize": 20,
@@ -12,41 +13,47 @@
   "config": {
     "view": {"stroke": "transparent"},
     "axis": {
-      "gridColor": "#ededed",
+      "gridColor": "#dee2e6",
       "gridWidth": 1,
       "labelFontSize": 12,
       "titleFontSize": 14,
       "titleFontWeight": "normal"
+    },
+    "legend": {
+      "labelFontWeight": "normal",
+      "titleFontWeight": "normal"
     }
   },
+
   "data": { "url": "csv/base_stats.csv" },
+
   "params": [
     {
       "name": "StatSelect",
       "value": "base_attack",
       "bind": {
         "input": "select",
-        "options": ["base_attack","base_defense","base_stamina"],
-        "labels": ["Base Attack","Base Defense","Base Stamina"],
+        "options": ["base_attack", "base_defense", "base_stamina"],
+        "labels": ["Base Attack", "Base Defense", "Base Stamina"],
         "name": "Select Stat: "
       }
     },
     {
-      "name": "TypeSelect",
-      "value": "All",
-      "bind": {
-        "input": "select",
-        "options": ["All", "Bug", "Dark", "Dragon", "Electric", "Fairy", "Fighting", "Fire", "Flying", "Ghost",
-                    "Grass", "Ground", "Ice", "Normal", "Poison", "Psychic", "Rock", "Steel", "Water"],
-        "name": "Select Type: "
-      }
+      "name": "TypeHighlight",
+      "select": {"type": "point", "fields": ["type"]},
+      "bind": "legend"
     }
   ],
+
   "transform": [
-    { "calculate": "datum[StatSelect]", "as": "Value" },
-    { "filter": "TypeSelect == 'All' || datum.type == TypeSelect" }
+    { "calculate": "datum[StatSelect]", "as": "Value" }
   ],
-  "mark": { "type": "tick", "size": 12, "color": "#9381ff" },
+
+  "mark": {
+    "type": "tick",
+    "size": 12
+  },
+
   "encoding": {
     "x": {
       "field": "type",
@@ -57,13 +64,35 @@
     "y": {
       "field": "Value",
       "type": "quantitative",
-      "axis": {"title": "Stat Value", "labelPadding": 10, "titlePadding": 10},
+      "axis": {
+        "title": "Stat Value",
+        "labelPadding": 10,
+        "titlePadding": 10
+      },
       "scale": { "zero": false }
     },
+    "color": {
+      "field": "type",
+      "type": "nominal",
+      "legend": {
+        "title": ["Pokémon Type", "↓ Click to Filter"], 
+        "symbolStrokeColor": "#8671fc", 
+        "symbolStrokeWidth": 1.5, 
+        "symbolSize": 100},
+      "scale": {"range": ["#bec0f1"]}, 
+      "condition": {
+        "param": "TypeHighlight",
+        "value": "#adaff7"
+      }
+    },
+    "opacity": {
+      "condition": {"param": "TypeHighlight", "value": 0.8},
+      "value": 0.15
+    },
     "tooltip": [
-      { "field": "pokemon_name", "title": "Pokémon: " },
-      { "field": "Value", "title": "Stat Value: " },
-      { "field": "type", "title": "Type: " }
+      { "field": "pokemon_name", "title": "Pokémon" },
+      { "field": "Value", "title": "Stat Value" },
+      { "field": "type", "title": "Type" }
     ]
   }
 }

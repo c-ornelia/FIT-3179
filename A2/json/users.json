@@ -3,17 +3,11 @@
   "description": "Pokémon GO Yearly Downloads vs Active Users",
   "width": 490,
   "height": 250,
-    "title": {
-    "text": "Pokémon GO Yearly Downloads vs Active Users",
-    "fontSize": 20,
-    "fontWeight": "bold",
-    "anchor": "start",
-    "offset": 20
-  },
+  "background": "#edf2fb",
   "config": {
     "view": {"stroke": "transparent"},
     "axis": {
-      "gridColor": "#ededed",
+      "gridColor": "#dee2e6",
       "gridWidth": 1,
       "labelFontSize": 12,
       "titleFontSize": 14,
@@ -55,6 +49,23 @@
       }
     },
     {
+      "transform": [
+        {
+          "filter": "datum.year == 2018"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 180,
+        "color": "#ff928b"
+      },
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "users", "type": "quantitative"}
+      }
+    },
+    {
       "mark": {"type": "line", "color": "#ff928b", "strokeWidth": 2},
       "encoding": {
         "x": {"field": "year", "type": "ordinal"},
@@ -67,6 +78,72 @@
           {"field": "year", "type": "ordinal", "title": "Year: "},
           {"field": "users", "type": "quantitative", "title": "Active Users (Millions): "}
         ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "fontSize": 20,
+        "fontWeight": "bold",
+        "x": -60,
+        "y": -20,
+        "text": "Pokémon GO Yearly",
+        "color": "#333"
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "fontSize": 20,
+        "fontWeight": "bold",
+        "x": 136,
+        "y": -20,
+        "text": "Downloads",
+        "color": "#adaff7"
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "fontSize": 20,
+        "fontWeight": "bold",
+        "x": 247,
+        "y": -20,
+        "text": "VS",
+        "color": "#333"
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "fontSize": 20,
+        "fontWeight": "bold",
+        "x": 280,
+        "y": -20,
+        "text": "Active Users",
+        "color": "#ff928b"
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "fontSize": 10,
+        "x": 165,
+        "y": 95,
+        "text": ["Feature additions including trading, social features and" , 
+                 "Community Day events, reignited interest in Pokémon GO,",
+                 "bringing back lapsed players and driving user activity."],
+        "color": "#333"
       }
     }
   ]

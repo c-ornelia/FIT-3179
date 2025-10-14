@@ -1,8 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "description": "Most Desired Items in Pokémon GO.",
-  "width": 180,
+  "width": 380,
   "height": 240,
+  "background": "#edf2fb",
   "title": {
     "text": "Most Desired Items in Pokémon GO",
     "fontSize": 20,
@@ -48,7 +49,7 @@
       "scale": {
         "range": ["#ffadad", "#ffd6a5", "#bdb2ff", "#fcefb4", "#fad2e1", "#eddcd2", "#b4e1ff"]
       },
-      "legend": {"title": "Item"}
+      "legend": {"title": "Item", "offset": 30}
     },
     "order": {"field": "percentage", "type": "quantitative", "sort": "ascending"},
     "tooltip": [

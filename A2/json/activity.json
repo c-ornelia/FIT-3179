@@ -1,8 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "description": "Preferred Activity in Pokémon GO.",
-  "width": 180,
+  "width": 380,
   "height": 240,
+  "background": "#edf2fb",
   "title": {
     "text": "Preferred Activity in Pokémon GO",
     "fontSize": 20,
@@ -38,14 +39,14 @@
   ],
   "encoding": {
     "theta": {"field": "percentage", "type": "quantitative", "stack": true},
-    "radius": {"field": "percentage", "scale": {"type": "sqrt", "zero": true, "rangeMin": 30, "rangeMax": 100}},
+    "radius": {"field": "percentage", "scale": {"type": "sqrt", "zero": true, "rangeMin": 70, "rangeMax": 140}},
     "color": {
       "field": "activity",
       "type": "nominal",
       "scale": {
         "range": ["#ffadad", "#ffd6a5", "#bde0fe", "#e2afff"]
       },
-      "legend": {"title": "Activity"}
+      "legend": {"title": "Activity", "offset": 30}
     },
     "order": {"field": "percentage", "type": "quantitative", "sort": "ascending"},  
     "tooltip": [

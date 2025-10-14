@@ -1,8 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Pokémon defender lollipop chart by score",
-  "width": 740,
+  "width": 700,
   "height": 289,
+  "background": "#edf2fb",
   "title": {
     "text": "Top 10 Defenders by Tier",
     "fontSize": 20,
@@ -13,7 +14,7 @@
   "config": {
     "view": {"stroke": "transparent"},
     "axis": {
-      "gridColor": "#ededed",
+      "gridColor": "#dee2e6",
       "gridWidth": 1,
       "labelFontSize": 12,
       "titleFontSize": 14,
@@ -71,7 +72,7 @@
             "values": [10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000],
             "gridColor": "#ededed",
             "gridWidth": 1,
-            "format": "~s"
+            "labelExpr": "format(datum.value, ',')"
           }
         },
         "y": {
@@ -121,7 +122,8 @@
           },
           {
             "field": "Score",
-            "title": "Score: "
+            "title": "Score: ",
+            "format": ","
           }
         ]
       }
@@ -130,8 +132,7 @@
       "mark": {
         "type": "text",
         "align": "left",
-        "dx": 10,
-        "font": "PT Sans"
+        "dx": 10
       },
       "encoding": {
         "x": {
@@ -144,7 +145,8 @@
           "sort": "-x"
         },
         "text": {
-          "field": "Score"
+          "field": "Score",
+          "format": ","
         },
         "color": {
           "value": "black"

@@ -3,6 +3,7 @@
   "description": "Annual Revenue Line Chart",
   "width": 480,
   "height": 270,
+  "background": "#edf2fb",
   "title": {
     "text": "Annual Revenue of Pokémon GO (Million USD)",
     "fontSize": 20,
@@ -13,7 +14,7 @@
   "config": {
     "view": {"stroke": "transparent"},
     "axis": {
-      "gridColor": "#ededed",
+      "gridColor": "#dee2e6",
       "gridWidth": 1,
       "labelFontSize": 12,
       "titleFontSize": 14,
@@ -35,6 +36,23 @@
   },
   "layer": [
     {
+      "transform": [
+        {
+          "filter": "datum.Year == 2020"
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 180,
+        "color": "#ff928b"
+      },
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal"},
+        "y": {"field": "Revenue", "type": "quantitative"}
+      }
+    },
+    {
       "mark": {
         "type": "line", 
         "color": "#ff928b",
@@ -44,7 +62,7 @@
         "x": {
           "field": "Year",
           "type": "ordinal",
-          "axis": {"labelAngle": 0, "title": null}
+          "axis": {"labelAngle": 0, "title": null, "labelAlign": "center", "labelPadding": 10}
         },
         "y": {
           "field": "Revenue",
@@ -55,6 +73,22 @@
           {"field": "Year", "type": "ordinal", "title": "Year: "},
           {"field": "Revenue", "type": "quantitative", "title": "Revenue (Million USD): "}
         ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",   
+        "fontWeight": 100,
+        "fontSize": 10,
+        "x": 150,
+        "y": 138,
+        "text": ["Pokémon GO’s revenue hit its peak in 2020 thanks to new 'play-at-home'" , 
+                 "features like Remote Raid Passes and a virtual Pokémon GO Fest,",
+                 "which became especially popular during pandemic lockdowns."],
+                   
+        "color": "#333"
       }
     }
   ]

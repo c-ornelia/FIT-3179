@@ -1,7 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 380,
+  "width": 360,
   "height": 300,
+  "background": "#edf2fb",
   "title": {
     "text": "Top 10 Attackers by Tier — DPS vs TDO",
     "fontSize": 20,
@@ -12,42 +13,61 @@
   "config": {
     "view": {"stroke": "transparent"},
     "axis": {
-      "gridColor": "#ededed",
+      "gridColor": "#dee2e6",
       "gridWidth": 1,
       "labelFontSize": 12,
-      "titleFontSize": 14, 
+      "titleFontSize": 14,
       "titleFontWeight": "normal"
     }
   },
   "data": { "url": "csv/attackers.csv" },
-  "mark": { "type": "circle", "size": 100 },
-  "encoding": {
-    "x": {
-      "field": "Total Damage Output (TDO)",
-      "type": "quantitative",
-      "title": "Total Damage Output (TDO)",
-      "axis": { "tickCount": 6, "labelPadding": 10, "titlePadding": 10 }
+  "layer": [
+    {
+      "mark": { "type": "circle", "size": 100, "stroke": "#fff", "strokeWidth": 0.5, "opacity": 0.8 },
+      "encoding": {
+        "x": {
+          "field": "Total Damage Output (TDO)",
+          "type": "quantitative",
+          "title": "Total Damage Output (TDO)",
+          "axis": { "tickCount": 6, "labelPadding": 10, "titlePadding": 10 }
+        },
+        "y": {
+          "field": "Damage per Second (DPS)",
+          "type": "quantitative",
+          "title": "Damage per Second (DPS)",
+          "axis": { "tickCount": 7, "labelPadding": 10, "titlePadding": 10}
+        },
+        "color": {
+          "field": "Tier",
+          "type": "nominal",
+          "scale": {
+            "domain": ["S","A","B","C","D","F"],
+            "range": ["#ffadad", "#ffd6a5", "#bdb2ff", "#b4e1ff", "#fad2e1", "#eddcd2"]
+          },
+          "title": "Tier"
+        },
+        "tooltip": [
+          { "field": "Name", "type": "nominal", "title": "Name: " },
+          { "field": "Tier", "type": "nominal", "title": "Tier: " },
+          { "field": "Damage per Second (DPS)", "type": "quantitative", "title": "Damage per Second (DPS): " },
+          { "field": "Total Damage Output (TDO)", "type": "quantitative", "title": "Total Damage Output (TDO): " }
+        ]
+      }
     },
-    "y": {
-      "field": "Damage per Second (DPS)",
-      "type": "quantitative",
-      "title": "Damage per Second (DPS)",
-      "axis": { "tickCount": 7, "labelPadding": 10, "titlePadding": 10}
-    },
-    "color": {
-      "field": "Tier",
-      "type": "nominal",
-      "scale": {
-        "domain": ["S","A","B","C","D","F"],
-        "range": ["#ffadad", "#ffd6a5", "#bdb2ff", "#b4e1ff", "#fad2e1", "#eddcd2"]
-      },
-      "title": "Tier"
-    },
-    "tooltip": [
-      { "field": "Name", "type": "nominal", "title": "Name: " },
-      { "field": "Tier", "type": "nominal", "title": "Tier: " },
-      { "field": "Damage per Second (DPS)", "type": "quantitative", "title": "Damage per Second (DPS): " },
-      { "field": "Total Damage Output (TDO)", "type": "quantitative", "title": "Total Damage Output (TDO): " }
-    ]
-  }
+    {
+      "transform": [{
+        "filter": "datum.Name === 'Mega Rayquaza'"
+      }],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "fontSize": 10,
+        "x": 115,
+        "y": 26,
+        "text": ["Strongest attacker in the game, Mega Rayquaza"],
+        "color": "#333"
+      }
+    }
+  ]
 }

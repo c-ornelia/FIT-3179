@@ -2,7 +2,8 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Development Costs with Ranges",
   "width": 380,
-  "height": 220,
+  "height": 230,
+  "background": "#edf2fb",
   "title": {
     "text": ["Approximate Breakdown of Development Costs (USD)", "for Pokémon GO"],
     "fontSize": 20,
@@ -13,7 +14,7 @@
   "config": {
     "view": {"stroke": "transparent"},
     "axis": {
-      "gridColor": "#ededed",
+      "gridColor": "#dee2e6",
       "gridWidth": 1,
       "labelFontSize": 12,
       "titleFontSize": 14,
@@ -49,7 +50,7 @@
         },
         "tooltip": [
           {"field": "Component", "type": "nominal", "title": "Component: "},
-          {"field": "value", "type": "quantitative", "title": "Estimated Cost (USD): "}
+          {"field": "value", "type": "quantitative", "title": "Estimated Cost (USD): ", "format": ","}
         ]
       }
     },
@@ -64,8 +65,8 @@
         "x2": {"field": "max"},
         "tooltip": [
           {"field": "Component", "type": "nominal", "title": "Component: "},
-          {"field": "min", "type": "quantitative", "title": "Min Cost (USD): "},
-          {"field": "max", "type": "quantitative", "title": "Max Cost (USD): "}
+          {"field": "min", "type": "quantitative", "title": "Min Cost (USD): ", "format": ","},
+          {"field": "max", "type": "quantitative", "title": "Max Cost (USD): ", "format": ","}
         ]
       }
     }
