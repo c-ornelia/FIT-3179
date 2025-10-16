@@ -19,6 +19,9 @@
       "titleFontSize": 14,
       "titleFontWeight": "normal"
     },
+    "padding": {
+      "bottom": 15
+    },
     "legend": {
       "labelFontWeight": "normal",
       "titleFontWeight": "normal"
@@ -91,9 +94,9 @@
       "value": 0.15
     },
     "tooltip": [
-      { "field": "pokemon_name", "title": "Pokémon" },
-      { "field": "Value", "title": "Stat Value" },
-      { "field": "type", "title": "Type" }
+      { "field": "pokemon_name", "title": "Pokémon: " },
+      { "field": "Value", "title": "Stat Value: " },
+      { "field": "type", "title": "Type: " }
     ]
   }
 }

@@ -2,19 +2,20 @@ body *{
     font-family: 'PT Sans', sans-serif;
 }
 
-h1 {
-    font-weight: 900;
-}
-
 body {
-    background-color: #f4f8ff;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f8fd;
+    display: flex;
+    justify-content: center;  /* center horizontally */
+    align-items: center;      /* center vertically */
 }
 
 .container-title {
   display: flex;
   align-items: center;   /* vertically center gif + text */
   justify-content: center; /* optional — centers everything horizontally */
-  background-color: #c4d4f0;
+  background-color: #dbe8fd;
   height: 200px;
 }
 
@@ -39,13 +40,11 @@ body {
 .h1 {
   font-size: 70px;
   font-weight: 900;
-  font-family: 'PT Sans', sans-serif;
 }
 
 .h2 {
   font-size: 30px;
   font-weight: 900;
-  font-family: 'PT Sans', sans-serif;
 }
 
 .page {
@@ -56,34 +55,30 @@ body {
 }
 
 .vis-container-left {
-    margin: 50px 40px 0px 0px;
+    margin-right: 40px;
     box-sizing: border-box;
 }
 
 .vis-container-middle {
-    margin: 50px 40px 20px 20px;
+    margin: 0px 40px 20px 20px;
     box-sizing: border-box;
 }
 
 .vis-container-right {
-    margin: 50px 20px 0px 40px;
+    margin: 0px 20px 0px 40px;
     box-sizing: border-box;
 }
 
 .vis-container-map {
-    margin: 50px 40px 0px 0px;
+    margin: 0px 40px 0px 0px;
     box-sizing: border-box;
-}
-
-.description h2,
-h1 {
-    margin-top: 0px;
 }
 
 .description-right {
     text-align: justify;       
     line-height: 1.8;         
-    margin: 20px 90px 0px 90px;    
+    margin: 0px 90px 0px 90px;    
+    justify-content: center;
     font-size: 16px;        
     background-color: #f4f8ff;  
     box-sizing: border-box;
@@ -92,14 +87,15 @@ h1 {
 .description-left {
     text-align: justify;       
     line-height: 1.8;         
-    margin: 20px 90px 0px 90px;    
+    margin: 0px 90px 0px 90px;    
+    justify-content: center;
     font-size: 16px;        
     background-color: #f4f8ff;  
     box-sizing: border-box;
 }
 
 .description-overview {
-    padding: 86px 40px 62px 0px;  
+    padding-right: 40px;  
     text-align: justify;       
     line-height: 1.8;            
     font-size: 16px;        
@@ -107,7 +103,7 @@ h1 {
 }
 
 .description-basestats {
-    padding: 236px 0px 222px 40px;  
+    padding-left: 40px;
     text-align: justify;       
     line-height: 1.8;         
     font-size: 16px;        
@@ -115,7 +111,7 @@ h1 {
 }
 
 .description-preference {
-    padding: 86px 0px 72px 40px;  
+    padding-left: 40px;  
     text-align: justify;       
     line-height: 1.8;            
     font-size: 16px;        
@@ -125,6 +121,9 @@ h1 {
 
 .pure-g {
     margin-bottom: 0px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
 }
 
 .small-font {
@@ -136,17 +135,4 @@ h1 {
   display: flex;
   justify-content: center;  /* Center horizontally */
   align-items: center;      /* Center vertically */
-  margin-top: 10px;      /* Space below dropdown */
-  margin-bottom: 10px;      /* Space below dropdown */
-}
-
-/* Optional: make label and dropdown look nice */
-.vega-bindings label {
-  font-weight: normal;
-  margin-right: 8px;
-}
-
-.vega-bindings select {
-  padding: 4px 8px;
-  border-radius: 6px;
 }

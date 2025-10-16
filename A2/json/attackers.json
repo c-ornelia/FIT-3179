@@ -49,8 +49,8 @@
         "tooltip": [
           { "field": "Name", "type": "nominal", "title": "Name: " },
           { "field": "Tier", "type": "nominal", "title": "Tier: " },
-          { "field": "Damage per Second (DPS)", "type": "quantitative", "title": "Damage per Second (DPS): " },
-          { "field": "Total Damage Output (TDO)", "type": "quantitative", "title": "Total Damage Output (TDO): " }
+          { "field": "Damage per Second (DPS)", "type": "quantitative", "title": "Damage per Second (DPS): ", "format": ".2f" },
+          { "field": "Total Damage Output (TDO)", "type": "quantitative", "title": "Total Damage Output (TDO): ", "format": ".2f"  }
         ]
       }
     },

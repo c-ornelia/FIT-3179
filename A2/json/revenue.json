@@ -88,7 +88,7 @@
         },
         "tooltip": [
           {"field": "Year", "type": "ordinal", "title": "Year: "},
-          {"field": "Revenue", "type": "quantitative", "title": "Revenue (Million USD): "}
+          {"field": "Revenue", "type": "quantitative", "title": "Revenue (Million USD): ", "format": ".2f"}
         ]
       }
     },
@@ -104,8 +104,8 @@
         "fontSize": 12,
         "x": 220,
         "y": 20,
-        "text": ["Added 'play-from-home' features" , 
-                 "for lockdown accessibility"],
+        "text": ["Added remote features that " , 
+                 "boosted engagement and spending"],
                    
         "color": "#333"
       }

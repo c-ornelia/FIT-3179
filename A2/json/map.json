@@ -10,6 +10,18 @@
     "anchor": "start",
     "offset": 20
   },
+  "config": {
+    "axis": {
+      "grid": false,
+      "domain": false,
+      "ticks": false,
+      "labels": false,
+      "title": null
+    }
+  },
+  "view": {
+    "stroke": null 
+  },
   "projection": {
     "type": "mercator",
     "center": [110.4, 4],
@@ -28,6 +40,9 @@
       }
     }
   ],
+  "padding": {
+    "bottom": 15
+  },
   "layer": [
     {
       "data": {
@@ -89,6 +104,113 @@
         "format": {"type": "topojson", "feature": "ne_110m_graticules_1"}
       },
       "mark": {"type": "geoshape", "stroke": "#dee2e6", "strokeWidth": 0.5}
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon1": 100.237791, "lat1": 5.390427,
+            "lon2": 104.351077, "lat2": 6.596812
+          }
+        ]
+      },
+      "encoding": {
+        "longitude": {"field": "lon1"},
+        "latitude": {"field": "lat1"},
+        "longitude2": {"field": "lon2"},
+        "latitude2": {"field": "lat2"}
+      },
+      "mark": {"type": "rule", "color": "#333", "strokeWidth": 0.5}
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "Region": "Pulau Pinang",
+            "lon": 104.451077,
+            "lat": 6.496812,
+            "text": "Penang shows consistently high player interest"
+          }
+        ]
+      },
+      "transform": [
+        { "filter": "datum.Region === 'Pulau Pinang'" }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "fontSize": 12,
+        "color": "#333",
+        "fontWeight": "normal"
+      },
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "text"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon1": 103.113477, "lat1": 4.579915,
+            "lon2": 106.791128, "lat2": 5.608363
+          }
+        ]
+      },
+      "encoding": {
+        "longitude": {"field": "lon1"},
+        "latitude": {"field": "lat1"},
+        "longitude2": {"field": "lon2"},
+        "latitude2": {"field": "lat2"}
+      },
+      "mark": {"type": "rule", "color": "#333", "strokeWidth": 0.5}
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon1": 102.065569, "lat1": 5.325200,
+            "lon2": 106.791128, "lat2": 5.608363
+          }
+        ]
+      },
+      "encoding": {
+        "longitude": {"field": "lon1"},
+        "latitude": {"field": "lat1"},
+        "longitude2": {"field": "lon2"},
+        "latitude2": {"field": "lat2"}
+      },
+      "mark": {"type": "rule", "color": "#333", "strokeWidth": 0.5}
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "Region": "Kelantan",
+            "lon": 106.891128,
+            "lat": 5.508363,
+            "text": "Kelantan and Terengganu shows consistently low player interest"
+          }
+        ]
+      },
+      "transform": [
+        { "filter": "datum.Region === 'Kelantan'" }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "fontSize": 12,
+        "color": "#333",
+        "fontWeight": "normal"
+      },
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "text"}
+      }
     }
   ]
 }
