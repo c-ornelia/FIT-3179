@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 470,
+  "width": 535,
   "height": 325,
   "background": "#f4f8ff",
   "title": {
@@ -19,6 +19,9 @@
       "titleFontSize": 14,
       "titleFontWeight": "normal"
     }
+  },
+  "padding": {
+    "left": 40
   },
   "data": { "url": "csv/attackers.csv" },
   "layer": [
@@ -63,7 +66,7 @@
         "align": "left",
         "baseline": "bottom",
         "fontSize": 12,
-        "x": 175,
+        "x": 235,
         "y": 30,
         "text": ["Strongest attacker in the game, Mega Rayquaza"],
         "color": "#333"

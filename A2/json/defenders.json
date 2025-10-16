@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Pokémon defender lollipop chart by score",
-  "width": 620,
-  "height": 289,
+  "width": 760,
+  "height": 280,
   "background": "#f4f8ff",
   "title": {
     "text": "Top 10 Defenders by Tier",
@@ -21,21 +21,19 @@
       "titleFontWeight": "normal"
     }
   },
+  
   "padding": {
-    "right": 50,
+    "right": 40,
     "bottom": 15
-    },
-  "autosize": {
-    "type": "fit-x",
-    "contains": "padding"
   },
+  "autosize": {"type": "fit-x", "contains": "padding", "resize": true},
   "data": {
     "url": "csv/defenders.csv"
   },
   "params": [
     {
       "name": "tierSelect",
-      "value": "C",
+      "value": "S",
       "bind": {
         "input": "select",
         "options": ["S", "A+", "A", "B", "C", "D"],
@@ -71,7 +69,8 @@
             "gridWidth": 1,
             "labelExpr": "format(datum.value, ',')",
             "labelAlign": "center",
-            "labelPadding": 10
+            "labelPadding": 10,
+            "values": [10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000]
           }
         },
         "y": {

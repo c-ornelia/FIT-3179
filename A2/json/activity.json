@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "description": " Most Preferred Activity in Pokémon GO.",
-  "width": 380,
+  "width": 360,
   "height": 240,
   "background": "#f4f8ff",
   "title": {
@@ -17,6 +17,9 @@
       "titleFontSize": 14,
       "titleFontWeight": "normal"
     }
+  },
+  "padding": {
+    "right": 20
   },
   "data": {
     "values": [
@@ -44,7 +47,7 @@
       "field": "activity",
       "type": "nominal",
       "scale": {
-        "range": ["#ffadad", "#ffd6a5", "#bde0fe", "#e2afff"]
+        "range": ["#f9dc5c", "#5aa9e6", "#ffb7ff", "#f4978e"]
       },
       "legend": {"title": "Activity", "offset": -55}
     },

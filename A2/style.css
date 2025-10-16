@@ -3,12 +3,7 @@ body *{
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #f6f8fd;
-    display: flex;
-    justify-content: center;  /* center horizontally */
-    align-items: center;      /* center vertically */
+    background-color: #c2c0c0;
 }
 
 .container-title {
@@ -16,7 +11,7 @@ body {
   align-items: center;   /* vertically center gif + text */
   justify-content: center; /* optional — centers everything horizontally */
   background-color: #dbe8fd;
-  height: 200px;
+  height: 160px;
 }
 
 .title-wrapper {
@@ -48,30 +43,14 @@ body {
 }
 
 .page {
-    width: 1228px;
+    width: 1150px;
     background-color: #f4f8ff;
     padding: 50px 50px 0px 50px;
     overflow-x: hidden;
 }
 
-.vis-container-left {
-    margin-right: 40px;
-    box-sizing: border-box;
-}
-
-.vis-container-middle {
-    margin: 0px 40px 20px 20px;
-    box-sizing: border-box;
-}
-
-.vis-container-right {
-    margin: 0px 20px 0px 40px;
-    box-sizing: border-box;
-}
-
-.vis-container-map {
-    margin: 0px 40px 0px 0px;
-    box-sizing: border-box;
+.vis-container {
+    width: 100%;
 }
 
 .description-right {

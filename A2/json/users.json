@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "description": "Pokémon GO Yearly Downloads vs Active Users",
-  "width": 610,
+  "width": 570,
   "height": 270,
   "background": "#f4f8ff",
   "config": {
@@ -25,6 +25,9 @@
       {"year": 2022, "users": 62,  "downloads": 42},
       {"year": 2023, "users": 55,  "downloads": 40}
     ]
+  },
+  "padding": {
+    "left": 40
   },
   "layer": [
     {
