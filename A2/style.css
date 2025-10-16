@@ -10,32 +10,67 @@ body {
     background-color: #f4f8ff;
 }
 
+.container-title {
+  display: flex;
+  align-items: center;   /* vertically center gif + text */
+  justify-content: center; /* optional — centers everything horizontally */
+  background-color: #c4d4f0;
+  height: 200px;
+}
+
+.title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* space between gif and text */
+}
+
+.title-logo {
+  height: 100px;
+  padding-top: 10px;
+  padding-right: 30px;
+}
+
+.title-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.h1 {
+  font-size: 70px;
+  font-weight: 900;
+  font-family: 'PT Sans', sans-serif;
+}
+
+.h2 {
+  font-size: 30px;
+  font-weight: 900;
+  font-family: 'PT Sans', sans-serif;
+}
+
 .page {
     width: 1228px;
     background-color: #f4f8ff;
     padding: 50px 50px 0px 50px;
+    overflow-x: hidden;
 }
 
 .vis-container-left {
-    width: 100%;
     margin: 50px 40px 0px 0px;
     box-sizing: border-box;
 }
 
 .vis-container-middle {
-    width: 100%;
     margin: 50px 40px 20px 20px;
     box-sizing: border-box;
 }
 
 .vis-container-right {
-    width: 100%;
     margin: 50px 20px 0px 40px;
     box-sizing: border-box;
 }
 
 .vis-container-map {
-    width: 100%;
     margin: 50px 40px 0px 0px;
     box-sizing: border-box;
 }

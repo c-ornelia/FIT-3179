@@ -5,7 +5,7 @@
   "height": 240,
   "background": "#f4f8ff",
   "title": {
-    "text": "Most Preferred Activity in Pokémon GO",
+    "text": "Player Activity Preferences",
     "fontSize": 20,
     "fontWeight": "bold",
     "anchor": "start",
