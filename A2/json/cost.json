@@ -38,7 +38,7 @@
   },
   "layer": [
     {
-      "mark": {"type": "bar", "size": 20, "color": "#d0d1ff"},
+      "mark": {"type": "bar", "size": 20, "color": "#90caf9"},
       "encoding": {
         "y": {
           "field": "Component",

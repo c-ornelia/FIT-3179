@@ -47,7 +47,7 @@
       "field": "activity",
       "type": "nominal",
       "scale": {
-        "range": ["#f9dc5c", "#5aa9e6", "#ffb7ff", "#f4978e"]
+        "range": ["#aa83c9", "#4181ab", "#f7dd5e", "#f4acb7"]
       },
       "legend": {"title": "Activity", "offset": -55}
     },

@@ -51,7 +51,7 @@
       "field": "item",
       "type": "nominal",
       "scale": {
-        "range": ["#ffadad", "#ffd6a5", "#b4e1ff", "#ffe989", "#815ac0", "#e5cdb0", "#fad2e1"]
+        "range": ["#ffd6a5", "#ced4da", "#ffbfed", "#bdb2Ff", "#bd516a", "#a3cef1", "#d5bdaf"]
       },
       "legend": {"title": "Item", "offset": -55}
     },

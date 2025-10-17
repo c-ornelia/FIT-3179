@@ -53,7 +53,7 @@
       "mark": {
         "type": "bar",
         "size": 2,
-        "color": "#b6ccfe"
+        "color": "#395e69"
       },
       "encoding": {
         "x": {
@@ -89,7 +89,7 @@
         "filled": true,
         "opacity": 1,
         "size": 100,
-        "color": "#abc4ff"
+        "color": "#395e69"
       },
       "encoding": {
         "x": {
