@@ -4,7 +4,7 @@
   "height": 325,
   "background": "#f4f8ff",
   "title": {
-    "text": "Top 10 Attackers by Tier — DPS vs TDO",
+    "text": "Top 10 Attackers by Tier",
     "fontSize": 20,
     "fontWeight": "bold",
     "anchor": "start",
@@ -45,7 +45,7 @@
           "type": "nominal",
           "scale": {
             "domain": ["S","A","B","C","D","F"],
-            "range": ["#143601", "#1a4301", "#245501", "#538d22", "#73a942", "#aad576"]
+            "range": ["#0c1f01", "#143301", "#245501", "#538d22", "#adcc91", "#d0e3bf"]
           },
           "title": "Tier"
         },

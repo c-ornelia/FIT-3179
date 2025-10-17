@@ -4,7 +4,7 @@
   "height": 400,
   "background": "#f4f8ff",
   "title": {
-    "text": "Relative Pokémon GO Interest, Malaysian States (2016 – 2024)",
+    "text": "Where the Trainers Are: Mapping Pokémon GO Popularity Across Malaysia",
     "fontSize": 20,
     "fontWeight": "bold",
     "anchor": "start",
@@ -211,6 +211,68 @@
         "latitude": {"field": "lat", "type": "quantitative"},
         "text": {"field": "text"}
       }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon1": 101.703064, "lat1": 3.113731,
+            "lon2": 105.208439, "lat2": 2.678725
+          }
+        ]
+      },
+      "encoding": {
+        "longitude": {"field": "lon1"},
+        "latitude": {"field": "lat1"},
+        "longitude2": {"field": "lon2"},
+        "latitude2": {"field": "lat2"}
+      },
+      "mark": {"type": "rule", "color": "#333", "strokeWidth": 0.5}
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "Region": "Kuala Lumpur",
+            "lon": 105.358439,
+            "lat": 2.528725,
+            "text": ["Kuala Lumpur and Selangor", "shows fluctuating player interest"]
+          }
+        ]
+      },
+      "transform": [
+        { "filter": "datum.Region === 'Kuala Lumpur'" }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "fontSize": 12,
+        "color": "#333",
+        "fontWeight": "normal"
+      },
+      "encoding": {
+        "longitude": {"field": "lon", "type": "quantitative"},
+        "latitude": {"field": "lat", "type": "quantitative"},
+        "text": {"field": "text"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon1": 101.511112, "lat1": 3.550503,
+            "lon2": 105.208439, "lat2": 2.678725
+          }
+        ]
+      },
+      "encoding": {
+        "longitude": {"field": "lon1"},
+        "latitude": {"field": "lat1"},
+        "longitude2": {"field": "lon2"},
+        "latitude2": {"field": "lat2"}
+      },
+      "mark": {"type": "rule", "color": "#333", "strokeWidth": 0.5}
     }
   ]
 }

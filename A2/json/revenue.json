@@ -48,7 +48,7 @@
         "type": "point",
         "filled": true,
         "size": 180,
-        "color": "#00607a"
+        "color": "#eda12f"
       },
       "encoding": {
         "x": {"field": "Year", "type": "ordinal"},
@@ -65,7 +65,7 @@
         "type": "point",
         "filled": true,
         "size": 180,
-        "color": "#00607a"
+        "color": "#eda12f"
       },
       "encoding": {
         "x": {"field": "Year", "type": "ordinal"},
@@ -75,7 +75,7 @@
     {
       "mark": {
         "type": "line", 
-        "color": "#00607a",
+        "color": "#eda12f",
         "strokeWidth": 2
       },
       "encoding": {
