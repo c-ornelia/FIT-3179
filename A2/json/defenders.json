@@ -69,7 +69,7 @@
             "gridWidth": 1,
             "labelExpr": "format(datum.value, ',')",
             "labelAlign": "center",
-            "labelPadding": 10,
+            "labelPadding": 5,
             "values": [10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000]
           }
         },

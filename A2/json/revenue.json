@@ -82,12 +82,12 @@
         "x": {
           "field": "Year",
           "type": "ordinal",
-          "axis": {"labelAngle": 0, "title": null, "labelAlign": "center", "labelPadding": 10}
+          "axis": {"labelAngle": 0, "title": null, "labelAlign": "center", "labelPadding": 5}
         },
         "y": {
           "field": "Revenue",
           "type": "quantitative",
-          "axis": {"labelPadding": 10, "titlePadding": 10}
+          "axis": {"labelPadding": 5, "titlePadding": 10}
         },
         "tooltip": [
           {"field": "Year", "type": "ordinal", "title": "Year: "},

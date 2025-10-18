@@ -28,7 +28,7 @@
     }
   },
 
-  "data": { "url": "csv/base_stats.csv" },
+  "data": {"url": "csv/base_stats.csv"},
 
   "params": [
     {
@@ -49,54 +49,58 @@
   ],
 
   "transform": [
-    { "calculate": "datum[StatSelect]", "as": "Value" }
+    {"calculate": "datum[StatSelect]", "as": "Value"}
   ],
 
-  "mark": {
-    "type": "tick",
-    "size": 12
-  },
-
-  "encoding": {
-    "x": {
-      "field": "type",
-      "type": "nominal",
-      "axis": { "title": "Pokémon Type", "labelAngle": -45 },
-      "scale": { "paddingInner": 0.3, "paddingOuter": 0.2 }
-    },
-    "y": {
-      "field": "Value",
-      "type": "quantitative",
-      "axis": {
-        "title": "Stat Value",
-        "labelPadding": 10,
-        "titlePadding": 10
+  "layer": [
+    {
+      "mark": {
+        "type": "tick",
+        "size": 12
       },
-      "scale": { "zero": false }
-    },
-    "color": {
-      "field": "type",
-      "type": "nominal",
-      "legend": {
-        "title": ["Pokémon Type", "↓ Click to Filter"], 
-        "symbolStrokeColor": "#472fce", 
-        "symbolStrokeWidth": 1.5, 
-        "symbolSize": 100,
-        "offset": 24},
-      "scale": {"range": ["#8671fc"]}, 
-      "condition": {
-        "param": "TypeHighlight",
-        "value": "#8671fc"
+      "encoding": {
+        "x": {
+          "field": "type",
+          "type": "nominal",
+          "axis": {"title": null, "labelAngle": -45},
+          "scale": {"paddingInner": 0.3, "paddingOuter": 0.2}
+        },
+        "y": {
+          "field": "Value",
+          "type": "quantitative",
+          "axis": {
+            "title": "Stat Value",
+            "labelPadding": 5,
+            "titlePadding": 10
+          },
+          "scale": {"zero": false}
+        },
+        "color": {
+          "field": "type",
+          "type": "nominal",
+          "legend": {
+            "title": ["Pokémon Type", "↓ Click to Filter"],
+            "symbolStrokeColor": "#472fce",
+            "symbolStrokeWidth": 1.5,
+            "symbolSize": 100,
+            "offset": 24
+          },
+          "scale": {"range": ["#b7abfd"]},
+          "condition": {
+            "param": "TypeHighlight",
+            "value": "#8671fc"
+          }
+        },
+        "opacity": {
+          "condition": {"param": "TypeHighlight", "value": 0.8},
+          "value": 0.15
+        },
+        "tooltip": [
+          {"field": "pokemon_name", "title": "Pokémon: "},
+          {"field": "Value", "title": "Stat Value: "},
+          {"field": "type", "title": "Type: "}
+        ]
       }
-    },
-    "opacity": {
-      "condition": {"param": "TypeHighlight", "value": 0.8},
-      "value": 0.15
-    },
-    "tooltip": [
-      { "field": "pokemon_name", "title": "Pokémon: " },
-      { "field": "Value", "title": "Stat Value: " },
-      { "field": "type", "title": "Type: " }
-    ]
-  }
+    }
+  ]
 }

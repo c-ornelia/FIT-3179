@@ -53,7 +53,7 @@
             "titlePadding": 10, 
             "domain": false, 
             "ticks": false, 
-            "labelPadding": 10, 
+            "labelPadding": 5, 
             "labelAlign": "center",
             "values": [40000, 80000, 120000, 160000]}
         },

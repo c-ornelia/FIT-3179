@@ -37,13 +37,13 @@
           "field": "year",
           "type": "ordinal",
           "title": "",
-          "axis": {"labelAngle": 0, "ticks": false, "labelPadding": 10}
+          "axis": {"labelAngle": 0, "ticks": false, "labelPadding": 5}
         },
         "y": {
           "field": "downloads",
           "type": "quantitative",
-          "title": "Downloads & Users (M)",
-          "axis": {"labelPadding": 10, "titlePadding": 10}
+          "title": "Downloads & Users (Million)",
+          "axis": {"labelPadding": 5, "titlePadding": 10}
         },
         "tooltip": [
           {"field": "year", "type": "ordinal", "title": "Year: "},

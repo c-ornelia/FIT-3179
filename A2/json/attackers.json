@@ -32,20 +32,20 @@
           "field": "Total Damage Output (TDO)",
           "type": "quantitative",
           "title": "Total Damage Output (TDO)",
-          "axis": { "tickCount": 6, "labelPadding": 10, "titlePadding": 10, "labelAlign": "center" }
+          "axis": { "tickCount": 6, "labelPadding": 5, "titlePadding": 10, "labelAlign": "center" }
         },
         "y": {
           "field": "Damage per Second (DPS)",
           "type": "quantitative",
           "title": "Damage per Second (DPS)",
-          "axis": { "tickCount": 7, "labelPadding": 10, "titlePadding": 10}
+          "axis": { "tickCount": 7, "labelPadding": 5, "titlePadding": 10}
         },
         "color": {
           "field": "Tier",
           "type": "nominal",
           "scale": {
             "domain": ["S","A","B","C","D","F"],
-            "range": ["#0c1f01", "#143301", "#245501", "#538d22", "#adcc91", "#d0e3bf"]
+            "range": ["#050d00", "#143301", "#245501", "#538d22", "#adcc91", "#d0e3bf"]
           },
           "title": "Tier"
         },
