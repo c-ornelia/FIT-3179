@@ -10,26 +10,16 @@
     "anchor": "start",
     "offset": 20
   },
-  "config": {
-    "view": {"stroke": "transparent"},
-    "axis": {
-      "gridColor": "#dee2e6",
-      "gridWidth": 1,
-      "labelFontSize": 12,
-      "titleFontSize": 14,
-      "titleFontWeight": "normal"
-    },
-    "legend": {
-      "labelFontWeight": "normal",
-      "titleFontWeight": "normal"
-    }
-  },
 
-  "data": {"url": "csv/base_stats.csv"},
+  "data": {"url": "csv/base_stats_v2.csv"},
+
+  "resolve": {
+    "scale": {"x": "shared", "y": "independent"}
+  },
 
   "params": [
     {
-      "name": "StatSelect",
+      "name": "statSelect",
       "value": "base_attack",
       "bind": {
         "input": "select",
@@ -45,22 +35,21 @@
     }
   ],
 
-  "transform": [{"calculate": "datum[StatSelect]", "as": "Value"}],
-
   "layer": [
     {
+      "transform": [{"filter": "datum.base_stats == statSelect"}],
       "mark": {"type": "tick", "size": 12},
       "encoding": {
         "x": {
           "field": "type",
           "type": "nominal",
           "axis": {"title": null, "labelAngle": -45},
-          "scale": {"paddingInner": 0.3, "paddingOuter": 0.2}
+          "scale": {"domain": ["Normal","Fire","Water","Grass","Electric","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Rock","Ghost","Dark","Dragon","Steel","Fairy"], "paddingInner": 0.3, "paddingOuter": 0.2}
         },
         "y": {
-          "field": "Value",
+          "field": "value",
           "type": "quantitative",
-          "axis": {"title": "Stat Value"},
+          "axis": {"title": "Stat Value", "labelPadding": 5, "titlePadding": 10},
           "scale": {"zero": false}
         },
         "color": {
@@ -73,17 +62,17 @@
             "symbolSize": 100,
             "offset": 24
           },
-          "scale": {"range": ["#b7abfd"]},
-          "condition": {"param": "TypeHighlight", "value": "#8671fc"}
+          "condition": {"param": "TypeHighlight", "value": "#8671fc"},
+          "scale": {"range": ["#b7abfd"]}
         },
         "opacity": {
           "condition": {"param": "TypeHighlight", "value": 0.8},
           "value": 0.15
         },
         "tooltip": [
-          {"field": "pokemon_name", "title": "Pokémon"},
-          {"field": "Value", "title": "Stat Value"},
-          {"field": "type", "title": "Type"}
+          {"field": "pokemon_name", "title": "Pokémon: "},
+          {"field": "value", "title": "Stat Value: "},
+          {"field": "type", "title": "Type: "}
         ]
       }
     },
@@ -91,27 +80,16 @@
     {
       "data": {
         "values": [
-          {"pokemon_name": "Deoxys", "type": "Psychic", "Value": 345, "stat": "base_attack"}
+          {"pokemon_name": "Deoxys", "value": 345, "type": "Psychic", "base_stats": "base_attack"}
         ]
       },
-      "transform": [
-        {"calculate": "StatSelect == datum.stat ? 1 : 0", "as": "show"},
-        {"filter": "datum.show == 1"}
-      ],
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "baseline": "middle",
-        "dx": 8,
-        "dy": -5,
-        "fontSize": 12,
-        "color": "#333"
-      },
+      "transform": [{"filter": "datum.base_stats == statSelect"}],
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 8, "dy": -8, "fontSize": 13, "fontWeight": "bold", "color": "#333"},
       "encoding": {
-        "x": {"field": "type"},
-        "y": {"field": "Value"},
-        "text": {"value": "Deoxys — Highest Base Attack"}
+        "x": {"field": "type", "type": "nominal"},
+        "y": {"field": "value", "type": "quantitative"},
+        "text": {"value": "Deoxys — strongest attacker"}
       }
     }
-  ]
+  ] 
 }

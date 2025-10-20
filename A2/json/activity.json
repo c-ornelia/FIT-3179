@@ -34,24 +34,39 @@
       "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
     },
     {
-      "mark": {"type": "text", "radiusOffset": 10, "fontSize": 10, "fill": "#000000"},
+      "mark": {"type": "text", "radiusOffset": 10, "fontSize": 12, "fill": "#000000"},
       "encoding": {
         "text": {"field": "percentage", "type": "quantitative"}
+      }
+    },
+    {
+      "transform": [{
+        "filter": "datum.activity === 'Hatching Eggs'"
+      }],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "fontSize": 12,
+        "x": -10,
+        "y": 85,
+        "text": ["Low reward and high effort", "make egg hatching unpopular."],
+        "fill": "#333"
       }
     }
   ],
   "encoding": {
     "theta": {"field": "percentage", "type": "quantitative", "stack": true},
-    "radius": {"field": "percentage", "scale": {"type": "sqrt", "zero": true, "rangeMin": 70, "rangeMax": 140}},
+    "radius": {"field": "percentage", "scale": {"type": "sqrt", "rangeMin": 70, "rangeMax": 140}},
     "color": {
       "field": "activity",
       "type": "nominal",
       "scale": {
         "range": ["#aa83c9", "#4181ab", "#f7dd5e", "#f4acb7"]
       },
-      "legend": {"title": "Activity", "offset": -55}
+      "legend": {"title": "Activity", "offset": -35}
     },
-    "order": {"field": "percentage", "type": "quantitative", "sort": "ascending"},  
+    "order": {"field": "percentage", "type": "quantitative", "sort": "descending"},  
     "tooltip": [
       {"field": "activity", "type": "nominal", "title": "Activity:"},
       {"field": "percentage", "type": "quantitative", "title": "Percentage (%): ", "format": "d"}

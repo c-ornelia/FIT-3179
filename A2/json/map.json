@@ -129,7 +129,7 @@
             "Region": "Pulau Pinang",
             "lon": 104.451077,
             "lat": 6.496812,
-            "text": "Penang shows consistently high player interest"
+            "text": "Penang shows consistently high player interest."
           }
         ]
       },
@@ -191,7 +191,7 @@
             "Region": "Kelantan",
             "lon": 106.891128,
             "lat": 5.508363,
-            "text": "Kelantan and Terengganu shows consistently low player interest"
+            "text": "Kelantan and Terengganu shows consistently low player interest."
           }
         ]
       },
@@ -236,7 +236,7 @@
             "Region": "Kuala Lumpur",
             "lon": 105.358439,
             "lat": 2.528725,
-            "text": ["Kuala Lumpur and Selangor", "shows fluctuating player interest"]
+            "text": ["Kuala Lumpur and Selangor", "shows fluctuating player interest."]
           }
         ]
       },

@@ -130,7 +130,8 @@
       "mark": {
         "type": "text",
         "align": "left",
-        "dx": 10
+        "dx": 10,
+        "fontSize": 12
       },
       "encoding": {
         "x": {
@@ -149,6 +150,21 @@
         "color": {
           "value": "black"
         }
+      }
+    },
+    {
+      "transform": [{
+        "filter": "datum.Name === 'Blissey'"
+      }],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "fontSize": 12,
+        "x": 255,
+        "y": 65,
+        "text": ["Blissey outshines all others with a much higher defender score."],
+        "color": "#333"
       }
     }
   ]

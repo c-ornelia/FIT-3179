@@ -108,7 +108,7 @@
         "x": 220,
         "y": 20,
         "text": ["Added remote features that " , 
-                 "boosted engagement and spending"],
+                 "boosted engagement and spending."],
                    
         "color": "#333"
       }
@@ -126,7 +126,7 @@
         "x": 70,
         "y": 180,
         "text": ["Fading initial hype and a lack of" , 
-                 "new content caused revenue to fall"],
+                 "new content caused revenue to fall."],
                    
         "color": "#333"
       }

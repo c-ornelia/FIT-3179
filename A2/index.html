@@ -16,9 +16,6 @@
     integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ"
     crossorigin="anonymous">
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-
   <!-- Your CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -72,7 +69,7 @@
 
     <div class="pure-g"  style="margin-top: 15px;">
       <div class="pure-u-1-2">
-        <div class="description">
+        <div class="description-left">
           <p style="margin-bottom: 5px;">
             To support its massive launch, the game required a strategic 
             investment of over <b>$500,000</b>, primarily for the crucial <b>server 
@@ -99,7 +96,7 @@
 
     <div class="pure-g"  style="margin-top: 15px;">
       <div class="pure-u-1-2">
-        <div class="description">
+        <div class="description-left">
           <p style="margin-bottom: 5px;">
             Beyond its global success, Pokémon GO’s popularity varies across regions. 
             In Malaysia, regional interest <b>concentrates</b> in <b>densely populated areas,</b> 
@@ -124,11 +121,19 @@
         <div id="base_stats" class="vis-container"></div>
       </div>
       <div class="pure-u-6-24" style="height: 100%; padding-bottom: 50px">
-        <div class="description-basestats">
+        <div class="description">
           <h2>Who Are the Top Performers by Base Stat?</h2>
           <p>
-            Deoxys has the highest Base Attack, while Shuckle leads in Defense but also has 
-            the lowest Attack. Blissey tops Stamina with its massive HP.
+            Having explored regional trends, we now focus on the core of Pokémon GO — the Pokémon themselves.
+          </p>
+          <p>
+            Base stats determine a Pokémon’s <b>battle potential</b> by defining its 
+            strengths and weaknesses. 
+          </p>
+          <p>  
+            <b>Deoxys</b> (Psychic) has the <b>highest attack</b>, <b>Shuckle</b> (Bug) 
+            ranks <b>highest in defense</b> but lowest in attack, and <b>Blissey</b> 
+            (Normal) <b>leads in stamina</b>. 
           </p>
         </div>
     </div>
@@ -138,6 +143,9 @@
       <div class="pure-u-5-12">
         <div class="description-overview">
           <h2>Mastering Battles with Top Attackers</h2>
+          <p>
+            Having explained base stats, we can now explore which Pokémon excel in battle.
+          </p>
           <p>
             Knowing the <b>best attackers</b> helps players <b>win Raids</b>, <b>Gyms</b>, 
             and <b>PvP battles</b> more efficiently. They deal higher damage, defeat bosses 
@@ -157,13 +165,15 @@
         <div id="defenders" class="vis-container"></div>
       </div>
       <div class="pure-u-1-3">
-        <div class="description-preference">
+        <div class="description" style="margin-bottom: 30px">
           <h2>The Importance of Strong Defenders</h2>
           <p>
-            <b>Strong gym defenders</b> help hold gyms longer, <b>maximizing rewards</b> 
-            and preventing other players from taking your spot. Pokémon like 
-            <b>Blissey</b> and <b>Chansey</b> are top choices due to their high 
-            HP and defense, making them time-consuming to defeat.
+            While strong attackers are key to winning battles, powerful defenders are just as important.
+          </p>
+          <p>
+            <b>Strong gym defenders</b> help hold gyms longer, maximizing rewards and 
+            preventing other players from taking your spot, as their <b>high HP</b> and 
+            <b>defense</b> make them <b>time-consuming to defeat</b>.
           </p>
         </div>
       </div>
@@ -178,32 +188,52 @@
         <div id="items" class="vis-container"></div>
       </div>
       <div class="pure-u-6-24">
-        <div class="description-preference">
+        <div class="description" style="margin-bottom: 35px">
           <h2>Players' Preferences</h2>
+          <P>
+            Beyond battles, it is also important to know what keeps players engaged.
+          </P>
           <p>
-            <span style="color:#4181ab; font-weight:bold;">Catching Pokémon</span>
-             continues to be the <b>most common</b> activity, highlighting the game’s 
-             focus on collection. The strong demand for <span style="color:#bd516a; 
-             font-weight:bold;">Stardust</span> shows players’ emphasis on <b>strengthening</b> 
-             their <b>Pokémon</b>.
+             Players prefer <span style="color:#4181ab; font-weight:bold;">catching Pokémon</span>, 
+             reflecting the game’s core focus on collection. 
+             The strong demand for <span style="color:#bd516a; 
+             font-weight:bold;">Stardust</span> also highlights their need to strengthen their 
+             Pokémon.
           </p>
         </div>
     </div>
 
     <!-- Credits -->
-    <div class="pure-g" style="margin-top: 50px; clear: both;">
-      <div class="pure-u-1">
-        <p style="text-align: left; font-size: 0.9em; color: #555;">
+    <div class="pure-g  credits" style="width: 100%">
+      <div class="pure-u-1-1">
+         <hr style="border: none; border-top: 1.5px solid #6f6f6f;">
+        <p>
           Visualisation Author: Cornelia Lee Wen Rong
             <br> 
-          Source: 
-          <a href="https://db.pokemongohub.net/">Pokémon GO Hub</a> | 
-          <a href="https://www.kaggle.com/datasets/shreyasur965/pokemon-go?select=pokemon.csv">Kaggle</a> | 
-          <a href="https://trends.google.com/trends/explore?date=now%201-d&geo=MY&q=pokemon%20go&hl=en">Google Trends</a> | 
-          <a href="https://www.businessofapps.com/data/pokemon-go-statistics/">Business of Apps</a> | 
-          <a href="https://www.statista.com/statistics/882474/pokemon-go-all-time-player-spending/">Statista</a> | 
-          <a href="https://www.juegostudio.com/blog/pokemon-go-revenue">Juego Studios</a> |
-          <a href="https://www.reddit.com/r/TheSilphRoad/comments/7e3mqi/analysis_a_brief_overview_of_the_pokemon_go/">Reddit</a>
+          Sources: 
+            <br>
+          Users and Downloads - 
+            <a href="https://www.businessofapps.com/data/pokemon-go-statistics/">Business of Apps</a> 
+            <br>
+          Estimated Development Cost for a Pokémon GO Game - 
+            <a href="https://www.juegostudio.com/blog/pokemon-go-revenue">Juego Studios</a>  
+            <br>
+          Annual Revenue of Pokémon GO - 
+            <a href="https://www.statista.com/statistics/882474/pokemon-go-all-time-player-spending/">Statista</a> 
+            <br>  
+          Regional Interest of Pokémon GO in Malaysia - 
+            <a href="https://trends.google.com/trends/explore?date=now%201-d&geo=MY&q=pokemon%20go&hl=en">Google Trends</a> | 
+            <a href="https://simplemaps.com/gis/country/my">Simple Maps</a> | 
+            <a href="https://www.naturalearthdata.com/downloads/10m-physical-vectors/">Natural Earth Data</a>
+            <br>
+          Distribution of Pokémon Base Stats - 
+            <a href="https://www.kaggle.com/datasets/shreyasur965/pokemon-go?select=pokemon.csv">Kaggle</a> 
+            <br>
+          Top 10 Attackers and Defenders - 
+            <a href="https://db.pokemongohub.net/">Pokémon GO Hub</a> 
+            <br>
+          Players' Preferences - 
+            <a href="https://www.reddit.com/r/TheSilphRoad/comments/7e3mqi/analysis_a_brief_overview_of_the_pokemon_go/">Reddit</a>
         </p>
       </div>
     </div>
@@ -229,6 +259,7 @@
         .then(() => {})
         .catch(console.error);
     }
+
   </script>
 </body>
 </html>

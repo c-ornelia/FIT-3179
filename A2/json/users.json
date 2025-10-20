@@ -144,10 +144,9 @@
         "align": "left",
         "baseline": "bottom",
         "fontSize": 12,
-        "x": 165,
-        "y": 105,
-        "text": ["Trading and Community Days reignited" , 
-                 "interest and boosted activity."],
+        "x": 175,
+        "y": 125,
+        "text": ["Trading and Community Days reignited interest and boosted activity."],
         "color": "#333"
       }
     }

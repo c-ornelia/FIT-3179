@@ -38,7 +38,7 @@
       "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
     },
     {
-      "mark": {"type": "text", "radiusOffset": 10, "fontSize": 10, "fill": "#000000"},
+      "mark": {"type": "text", "radiusOffset": 10, "fontSize": 12, "fill": "#000000"},
       "encoding": {
         "text": {"field": "percentage", "type": "quantitative"}
       }
@@ -53,7 +53,7 @@
       "scale": {
         "range": ["#ffd6a5", "#ced4da", "#ffbfed", "#bdb2Ff", "#bd516a", "#a3cef1", "#d5bdaf"]
       },
-      "legend": {"title": "Item", "offset": -55}
+      "legend": {"title": "Item", "offset": -45}
     },
     "order": {"field": "percentage", "type": "quantitative", "sort": "ascending"},
     "tooltip": [

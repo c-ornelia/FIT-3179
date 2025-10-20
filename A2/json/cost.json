@@ -5,7 +5,7 @@
   "height": 230,
   "background": "#f4f8ff",
   "title": {
-    "text": ["Approximate Breakdown of Development Costs (USD)", "for Pokémon GO"],
+    "text": ["Estimated Development Cost for a Pokémon GO Game", " (USD)"],
     "fontSize": 20,
     "fontWeight": "bold",
     "anchor": "start",

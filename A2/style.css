@@ -1,15 +1,11 @@
-body *{
-    font-family: 'PT Sans', sans-serif;
-}
-
 body {
     background-color: #c2c0c0;
 }
 
 .container-title {
   display: flex;
-  align-items: center;   /* vertically center gif + text */
-  justify-content: center; /* optional — centers everything horizontally */
+  align-items: center;        /* centers vertically */
+  justify-content: center;    /* centers horizontally */
   background-color: #dbe8fd;
   height: 160px;
 }
@@ -17,7 +13,7 @@ body {
 .title-wrapper {
   display: flex;
   align-items: center;
-  gap: 20px; /* space between gif and text */
+  gap: 20px;                 /* adjusts gap between elements */
 }
 
 .title-logo {
@@ -65,7 +61,7 @@ body {
     box-sizing: border-box;
 }
 
-.description {
+.description-left {
     text-align: justify;       
     line-height: 1.8;         
     word-spacing: 0.3em;
@@ -84,21 +80,12 @@ body {
     background-color: #f4f8ff;  
 }
 
-.description-basestats {
+.description {
     padding-left: 40px;
     text-align: justify;       
     line-height: 1.8;         
     font-size: 16px;        
     background-color: #f4f8ff;  
-}
-
-.description-preference {
-    padding-left: 40px;  
-    text-align: justify;       
-    line-height: 1.8;            
-    font-size: 16px;        
-    background-color: #f4f8ff;  
-    box-sizing: border-box;
 }
 
 .pure-g {
@@ -108,13 +95,22 @@ body {
     align-items: center;
 }
 
-.small-font {
-    font-size: 14px;
-}
-
 /* Center dropdown filters for all Vega-Lite charts */
 .vega-bindings {
   display: flex;
-  justify-content: center;  /* Center horizontally */
-  align-items: center;      /* Center vertically */
+  justify-content: center; 
+  align-items: center;      
+}
+
+.credits {
+  margin-top: 50px;
+  clear: both;
+  text-align: center;
+}
+.credits p {
+  display: inline-block;
+  text-align: center;
+  font-size: 0.9em;
+  color: #555;
+  line-height: 1.6;
 }
